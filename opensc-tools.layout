@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug - opensc-random" />
+	<File name="common/simclist.h" open="0" top="0" tabpos="0">
+		<Cursor position="25433" topLine="690" />
+	</File>
+	<File name="libopensc/opensc.h" open="0" top="0" tabpos="0">
+		<Cursor position="1123" topLine="21" />
+	</File>
+	<File name="libopensc/types.h" open="0" top="0" tabpos="0">
+		<Cursor position="1914" topLine="31" />
+	</File>
+	<File name="opensc-entropy.c" open="1" top="0" tabpos="4">
+		<Cursor position="1326" topLine="0" />
+	</File>
+	<File name="opensc-random.c" open="1" top="0" tabpos="3">
+		<Cursor position="1491" topLine="27" />
+	</File>
+	<File name="util.c" open="1" top="0" tabpos="1">
+		<Cursor position="257" topLine="63" />
+	</File>
+	<File name="util.h" open="1" top="1" tabpos="2">
+		<Cursor position="109" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

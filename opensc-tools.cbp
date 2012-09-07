@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="opensc-tools" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug - opensc-random">
+				<Option output="bin/Debug/opensc-random" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-I." />
+				</Compiler>
+				<Linker>
+					<Add library="opensc" />
+				</Linker>
+			</Target>
+			<Target title="Release - opensc-random">
+				<Option output="bin/Release/opensc-random" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="Debug - opensc-entropy">
+				<Option output="bin/Debug/opensc-entropy" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option additional_output="util.c;" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-I." />
+				</Compiler>
+				<Linker>
+					<Add library="opensc" />
+				</Linker>
+			</Target>
+			<Target title="Release - opensc-entropy">
+				<Option output="bin/Debug/opensc-entropy" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option additional_output="util.c;" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-I." />
+				</Compiler>
+				<Linker>
+					<Add library="opensc" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="common/simclist.h" />
+		<Unit filename="libopensc/cardctl.h" />
+		<Unit filename="libopensc/errors.h" />
+		<Unit filename="libopensc/opensc.h" />
+		<Unit filename="libopensc/types.h" />
+		<Unit filename="opensc-entropy.c">
+			<Option compilerVar="CC" />
+			<Option target="Debug - opensc-entropy" />
+			<Option target="Release - opensc-entropy" />
+		</Unit>
+		<Unit filename="opensc-random.c">
+			<Option compilerVar="CC" />
+			<Option target="Debug - opensc-random" />
+			<Option target="Release - opensc-random" />
+		</Unit>
+		<Unit filename="scconf/scconf.h" />
+		<Unit filename="util.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="util.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1325374595 source:/home/bwood/projects/opensc-tools/opensc-random.c
+	"util.h"
+	"libopensc/opensc.h"
+	"libopensc/cardctl.h"
+
+1325359827 /home/bwood/projects/opensc-tools/libopensc/opensc.h
+	<stdio.h>
+	<unistd.h>
+	"common/simclist.h"
+	"scconf/scconf.h"
+	"libopensc/errors.h"
+	"libopensc/types.h"
+
+1325359832 /home/bwood/projects/opensc-tools/libopensc/cardctl.h
+	"libopensc/types.h"
+
+1325374668 source:/home/bwood/projects/opensc-tools/opensc-entropy.c
+	"util.h"
+	"libopensc/opensc.h"
+	"libopensc/cardctl.h"
+	<syslog.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+	<linux/random.h>
+
+1325374833 /home/bwood/projects/opensc-tools/util.h
+	"libopensc/opensc.h"
+	"libopensc/cardctl.h"
+	<unistd.h>
+	<string.h>
+	<stdlib.h>
+
+1325374237 source:/home/bwood/projects/opensc-tools/util.c
+	"util.h"
+
