@@ -7,16 +7,16 @@ License: LGPL
 
 This provides two more utilities for OpenSC:
 
-opensc-random: Output random data from a smartcard to stdin
+1) opensc-random: Output random data from a smartcard to stdin
 
 	Usage:
 
-	1) Write a specific number of random bytes to stdout:
+	A) Write a specific number of random bytes to stdout:
 
 	$ opensc-tools 48 | base64
 	mhM4rNRLci0QEtAXfRree+htPjHemieUKH9L5qzvmee+JeNtU2KelK6Hi91H1A4s
 
-	2) Continuously write to stdout (warning, may be very slow!):
+	B) Continuously write to stdout (warning, may be very slow!):
 	
 	$ opensc-tools | dd of=random.dat bs=1 count=4096
 	4096+0 records in
@@ -24,9 +24,9 @@ opensc-random: Output random data from a smartcard to stdin
 	4096 bytes (4.1 kB) copied, 132.724 s, 0.0 kB/s
 
 
-opensc-entropy: Feed entropy to the kernel from a smart card. (must be root)
+2) opensc-entropy: Feed entropy to the kernel from a smart card. (must be root)
 
-	A simple wrapper around libopensc for retrieving random data from a smart card HWRNG and feeding it into the kernel random pool using an ioctl. This makes it available to any application using /dev/random.
+A simple wrapper around libopensc for retrieving random data from a smart card HWRNG and feeding it into the kernel random pool using an ioctl. This makes it available to any application using /dev/random.
 
 
 Building
