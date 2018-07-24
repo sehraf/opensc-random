@@ -98,10 +98,11 @@ int main(int argc, char * const argv[])
     }
 
 
-    unsigned char buffer[MAX_BLOCK];
-    int count = MAX_BLOCK;
-    int n = MAX_BLOCK;
-    int n_bits = MAX_BLOCK*8;
+    unsigned int maxLenght = util_find_max_supported_lenght(card, MAX_BLOCK);
+    unsigned char buffer[maxLenght];
+    int count = maxLenght;
+    int n = maxLenght;
+    int n_bits = maxLenght*8;
 
     struct rand_pool_info *output;
     int fd = open(DEV_RANDOM, O_WRONLY);

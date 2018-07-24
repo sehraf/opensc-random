@@ -18,7 +18,7 @@
  *         4096 bytes (4.1 kB) copied, 132.724 s, 0.0 kB/s
  *
  *
- * Copyright (C) 2012 Brian Wood 
+ * Copyright (C) 2012 Brian Wood
  * Copyright (C) 2001 Juha Yrjola <juha.yrjola@iki.fi>
  *
  * This library is free software; you can redistribute it and/or
@@ -98,7 +98,8 @@ int main(int argc, char * const argv[])
         return 1;
     }
 
-    unsigned char buffer[MAX_BLOCK];
+    unsigned int maxLenght = util_find_max_supported_lenght(card, MAX_BLOCK);
+    unsigned char buffer[maxLenght];
 
     if (argc > 1)
     {
@@ -112,8 +113,8 @@ int main(int argc, char * const argv[])
         int block = 0, i;
         while (bytes > 0)
         {
-            if (bytes > MAX_BLOCK)
-                block = MAX_BLOCK;
+            if (bytes > maxLenght)
+                block = maxLenght;
             else
                 block = bytes;
 
@@ -144,14 +145,14 @@ int main(int argc, char * const argv[])
         int nw;
         while (1)
         {
-            r = sc_get_challenge(card, buffer, MAX_BLOCK);
+            r = sc_get_challenge(card, buffer, maxLenght);
             if (r < 0)
             {
                 fprintf(stderr, "Failed to get random bytes: %s\n", sc_strerror(r));
                 return -1;
             }
 
-            if ((nw = write(wfd, buffer, MAX_BLOCK)) == 0 || (nw == -1))
+            if ((nw = write(wfd, buffer, maxLenght)) == 0 || (nw == -1))
                 return 0;
         }
     }

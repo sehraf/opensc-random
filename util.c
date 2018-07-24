@@ -138,3 +138,40 @@ autofound:
     return 0;
 }
 
+int util_find_max_supported_lenght(sc_card_t *card, int startValue)
+{
+    int r;
+    int maxLenght = startValue;
+    unsigned char buffer[maxLenght];
+
+    while (1) {
+        r = sc_get_challenge(card, buffer, maxLenght);
+
+        if (r < 0) {
+            // check for site error
+            if (r == SC_ERROR_WRONG_LENGTH) {
+                switch (maxLenght) {
+                case startValue:
+                    maxLenght = 16;
+                    // continue to restart loop (don't use break!)
+                    continue;
+                case 16:
+                    maxLenght = 8;
+                    // continue to restart loop (don't use break!)
+                    continue;
+                default:
+                    (void)0;
+                    // fall through
+                }
+            }
+
+            fprintf(stderr, "Failed to get random bytes: %s %d\n", sc_strerror(r), r);
+            return -1;
+        } else {
+            // success
+            break;
+        }
+    }
+
+    return maxLenght;
+}
